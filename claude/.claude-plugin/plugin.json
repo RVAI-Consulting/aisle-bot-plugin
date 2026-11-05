@@ -9,5 +9,8 @@
     "url": "https://aisleintelligence.app/"
   },
   "homepage": "https://aisleintelligence.app/",
+  "supportUrl": "https://aisleintelligence.app/support/",
+  "privacyPolicyUrl": "https://aisleintelligence.app/legal/plus/#privacy-policy",
+  "termsOfServiceUrl": "https://aisleintelligence.app/legal/plus/",
   "license": "MIT"
 }
