@@ -1,0 +1,104 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "aisle-bot",
+  "version": "1.0.0",
+  "description": "Ask about your own grocery trips, items, prices, and list from the Aisle Intelligence iPhone app. Read-only, and it needs an active Plus subscription.",
+  "author": {
+    "name": "RVAi Consulting LLC",
+    "email": "partnerships@aisleintelligence.app",
+    "url": "https://aisleintelligence.app/"
+  },
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "Aisle Bot",
+        "shortDescription": "Ask about your grocery history",
+        "longDescription": "Aisle Bot connects ChatGPT to the grocery history you keep in the Aisle Intelligence iPhone app, so you can ask about your own spending and prices by typing or by voice.\n\nAsk how much you spent last month, what you paid for eggs at each store, what you bought on your last trip, or what's on your grocery list. ChatGPT answers from your own trips, the items on them, the prices you paid, and your grocery list.\n\nWho it's for: people with an active Aisle Intelligence Plus subscription. You connect from the app, which shows what leaves your iPhone and gives you a code to type on the sign-in page.\n\nWhat it can read: your trips from the last 13 months, their items and prices, and your grocery list.\n\nWhat it can't do: it can't change anything, add to your list, or buy anything. It can't read your receipt photos, store sign-ins, passwords, loyalty numbers, or name. It leaves out pharmacy and health items it recognizes. It shows your own prices only, not other shoppers' prices or shelf prices.\n\nYou stay in control. Disconnect in the app at any time, and we delete our copy and end access. Access also ends when Plus ends. What ChatGPT already read stays in your chats until you delete those chats.\n\nAisle Bot is made by RVAi Consulting LLC. It isn't made or endorsed by OpenAI.",
+        "developerName": "RVAi Consulting LLC",
+        "category": "Productivity",
+        "capabilities": [
+          "Read grocery trips",
+          "Read purchased items and prices",
+          "Read grocery list"
+        ],
+        "websiteURL": "https://aisleintelligence.app/",
+        "supportURL": "https://aisleintelligence.app/support/",
+        "privacyPolicyURL": "https://aisleintelligence.app/legal/plus/#privacy-policy",
+        "termsOfServiceURL": "https://aisleintelligence.app/legal/plus/",
+        "defaultPrompt": [
+          "How much did I spend on groceries last month?",
+          "What did I pay for eggs at each store?",
+          "What's on my grocery list?"
+        ],
+        "composerIcon": "./assets/logo.png",
+        "logo": "./assets/logo.png"
+      },
+      "review": {
+        "test_cases": {
+          "positive": [
+            {
+              "description": "Total spending in one month.",
+              "prompt": "How much did I spend on groceries in October 2026?",
+              "tools_triggered": [
+                "list_trips"
+              ],
+              "expected_behavior": "Calls list_trips for 2026-10-01 to 2026-10-31. Answers 4 trips and $65.97 in total."
+            },
+            {
+              "description": "One item's price at each store.",
+              "prompt": "What did I pay for large eggs at each store?",
+              "tools_triggered": [
+                "get_my_prices"
+              ],
+              "expected_behavior": "Calls get_my_prices for large eggs. Answers Sample Market: latest $3.89, lowest $3.49, highest $3.89. Corner Grocer: $4.29."
+            },
+            {
+              "description": "The current grocery list.",
+              "prompt": "What's on my grocery list?",
+              "tools_triggered": [
+                "get_grocery_list"
+              ],
+              "expected_behavior": "Calls get_grocery_list. Answers Large eggs, Bananas (2), Sourdough bread, and Olive oil, with Coffee checked off."
+            },
+            {
+              "description": "What was bought on one trip.",
+              "prompt": "What did I buy at Corner Grocer on October 25, 2026?",
+              "tools_triggered": [
+                "list_items"
+              ],
+              "expected_behavior": "Calls list_items for that date, and may call list_trips first. Answers Large Eggs 12 ct $4.29, Sourdough Bread $4.99, and Coffee 12 oz $8.99, for $18.27."
+            },
+            {
+              "description": "Spending on one category over a date range.",
+              "prompt": "How much did I spend on produce from October 1 to November 30, 2026?",
+              "tools_triggered": [
+                "list_items"
+              ],
+              "expected_behavior": "Calls list_items with category Produce for those dates. Answers Bananas $1.48, Baby Spinach $3.99, and Apples 3 lb $4.99, for $10.46."
+            }
+          ],
+          "negative": [
+            {
+              "description": "This connection leaves out pharmacy and health items, so it can't answer this. Expected: if list_items is called it returns no items and a note saying those items aren't available. ChatGPT says this connection doesn't include them and doesn't guess or invent any.",
+              "prompt": "What prescriptions have I picked up lately?"
+            },
+            {
+              "description": "Every tool is read-only, so nothing can be added. Expected: no tool changes anything. ChatGPT says it can't change the list here and doesn't claim it added the item.",
+              "prompt": "Add milk to my grocery list."
+            },
+            {
+              "description": "The tools return this member's own prices only. Expected: ChatGPT says it has only your own prices, may offer those, and doesn't invent what others paid.",
+              "prompt": "What are other shoppers near me paying for eggs?"
+            }
+          ]
+        }
+      },
+      "publication": {
+        "countries": [
+          "US"
+        ],
+        "release_notes": "Initial release."
+      }
+    }
+  }
+}

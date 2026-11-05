@@ -1,0 +1,13 @@
+{
+  "name": "aisle-bot",
+  "displayName": "Aisle Bot",
+  "version": "1.0.0",
+  "description": "Ask about your own grocery trips, items, prices, and list from the Aisle Intelligence iPhone app. Read-only, and it needs an active Plus subscription.",
+  "author": {
+    "name": "RVAi Consulting LLC",
+    "email": "partnerships@aisleintelligence.app",
+    "url": "https://aisleintelligence.app/"
+  },
+  "homepage": "https://aisleintelligence.app/",
+  "license": "MIT"
+}
