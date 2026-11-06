@@ -34,7 +34,7 @@ The connector has four read-only tools:
 
 Each time Claude uses a tool, the plugin sends that tool's arguments, such as a date range or an item name, to `api.aisleintelligence.app`. The results go to Claude. The plugin sends data to no other service.
 
-**What it can't do:** it can't change anything, add to your list, or buy anything. It can't read your receipt photos, store sign-ins, passwords, loyalty numbers, or name. It leaves out pharmacy and health items it recognizes, so a trip's total can be more than its listed items. It shows your own prices only, not other shoppers' prices or shelf prices.
+**What it can't do:** it can't change anything, add to your list, or buy anything. It can't read your receipt photos, passwords, loyalty numbers, or name. It leaves out pharmacy and health items it recognizes, so a trip's total can be more than its listed items. It shows your own prices only, not other shoppers' prices or shelf prices.
 
 **Your data:** when you tap Connect, the app sends our server an encrypted copy of this data and keeps it current. Tap Disconnect in the app, or use Delete all data, and we delete our copy and end Claude's access. Access also ends when Plus ends, and we delete our copy 7 days after that. What Claude already read stays in your chats until you delete those chats. Read our [privacy policy](https://aisleintelligence.app/legal/plus/#privacy-policy).
 
