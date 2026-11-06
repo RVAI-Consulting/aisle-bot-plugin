@@ -1,13 +1,15 @@
-# Aisle Bot plugins
+# Aisle Bot
 
-Plugins that connect Claude, ChatGPT, and Codex to the grocery history in the Aisle Intelligence iPhone app. They're made by RVAi Consulting LLC.
+Plugins that connect Claude, ChatGPT, and Codex to the grocery history in the Aisle Intelligence iPhone app. They read your own trips, items, prices, and grocery list, and they can't change anything.
 
-| Folder | For | How it's listed |
-|---|---|---|
-| `claude/` | Anthropic's directory | Submitted from this repository, with `claude` as the plugin path. |
-| `chatgpt/` | OpenAI's plugin directory | Uploaded as a ZIP of the folder's contents. |
-| `codex/` | Codex | The Codex plugin layout, for the same server. |
+| Folder | For |
+|---|---|
+| `claude/` | Claude |
+| `chatgpt/` | ChatGPT |
+| `codex/` | Codex |
 
 All three use the same server, `https://api.aisleintelligence.app/mcp`, and the same skill. None of them holds program code, keys, or passwords.
 
-Read `claude/README.md` for what the plugin does and what data it sends.
+Read [`claude/README.md`](claude/README.md) for what the plugin does and what data it sends.
+
+Made by RVAi Consulting LLC. Support: [aisleintelligence.app/support](https://aisleintelligence.app/support/).

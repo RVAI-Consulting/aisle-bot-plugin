@@ -40,6 +40,6 @@ Each time Claude uses a tool, the plugin sends that tool's arguments, such as a 
 
 ## Support
 
-Go to [aisleintelligence.app/support](https://aisleintelligence.app/support/), or email partnerships@aisleintelligence.app.
+Go to [aisleintelligence.app/support](https://aisleintelligence.app/support/), or email support@aisleintelligence.app.
 
 Aisle Bot is made by RVAi Consulting LLC. It isn't made or endorsed by Anthropic.

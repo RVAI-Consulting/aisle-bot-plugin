@@ -10,5 +10,28 @@
   "homepage": "https://aisleintelligence.app/",
   "license": "MIT",
   "skills": "./skills/",
-  "mcpServers": "./.mcp.json"
+  "mcpServers": "./.mcp.json",
+  "interface": {
+    "displayName": "Aisle Bot",
+    "shortDescription": "Ask about your grocery history",
+    "longDescription": "Aisle Bot connects Codex to the grocery history you keep in the Aisle Intelligence iPhone app, so you can ask about your own spending and prices by typing or by voice.\n\nAsk how much you spent last month, what you paid for eggs at each store, what you bought on your last trip, or what's on your grocery list. Codex answers from your own trips, the items on them, the prices you paid, and your grocery list.\n\nWho it's for: people with an active Aisle Intelligence Plus subscription. You connect from the app, which shows what leaves your iPhone and gives you a code to type on the sign-in page.\n\nWhat it can read: your trips from the last 13 months, their items and prices, and your grocery list.\n\nWhat it can't do: it can't change anything, add to your list, or buy anything. It can't read your receipt photos, passwords, loyalty numbers, or name. It leaves out pharmacy and health items it recognizes. It shows your own prices only, not other shoppers' prices or shelf prices.\n\nYou stay in control. Disconnect in the app at any time, and we delete our copy and end access. Access also ends when Plus ends. What Codex already read stays in your chats until you delete those chats.\n\nAisle Bot is made by RVAi Consulting LLC. It isn't made or endorsed by OpenAI.",
+    "developerName": "RVAi Consulting LLC",
+    "category": "Productivity",
+    "capabilities": [
+      "Read grocery trips",
+      "Read purchased items and prices",
+      "Read grocery list"
+    ],
+    "websiteURL": "https://aisleintelligence.app/",
+    "privacyPolicyURL": "https://aisleintelligence.app/legal/plus/#privacy-policy",
+    "termsOfServiceURL": "https://aisleintelligence.app/legal/plus/",
+    "defaultPrompt": [
+      "How much did I spend on groceries last month?",
+      "What did I pay for eggs at each store?",
+      "What's on my grocery list?"
+    ],
+    "brandColor": "#041535",
+    "composerIcon": "./assets/logo.png",
+    "logo": "./assets/logo.png"
+  }
 }
